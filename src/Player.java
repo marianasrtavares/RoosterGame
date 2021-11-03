@@ -4,7 +4,7 @@ import java.util.List;
 public class Player {
 	private Integer numberPlayer;
 	private String card;
-	private List<Move> moves = new ArrayList<>();
+	private List<Position> Positions = new ArrayList<>();
 
 	public Player() {
 
@@ -36,17 +36,17 @@ public class Player {
 		return "Player [numberPlayer=" + numberPlayer + ", card=" + card + "]";
 	}
 
-	public void addMoves(Move move) {
-		moves.add(move);
+	public void addPositions(Position Position) {
+		Positions.add(Position);
 	}
 
-	public List<Move> getMoves() {
-		return moves;
+	public List<Position> getPositions() {
+		return Positions;
 	}
 
-	public void printMoves() {
-		for (Move move : moves) {
-			System.out.println(move);
+	public void printPositions() {
+		for (Position Position : Positions) {
+			System.out.println(Position);
 		}
 
 	}

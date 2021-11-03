@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Practice03 {
+public class Program {
 
 	public static void main(String args[]) {
 
@@ -39,7 +39,7 @@ public class Practice03 {
 		while (!board.isPossibleSolution(board.possibleSolution())) {
 			System.out.println("Play " + Player.getPlayer(firstPlayer, secondPlayer, currentPlayer));
 			System.out.print("Choose line and row: ");
-			Move m = new Move();
+			Position m = new Position();
 			int line = sc.nextInt();
 
 			// stop the game
@@ -70,9 +70,9 @@ public class Practice03 {
 			}
 
 			// continue the game
-			m = new Move(line, row, Player.getPlayer(firstPlayer, secondPlayer, currentPlayer).getCard());
-			board.addMove(m);
-			Player.getPlayer(firstPlayer, secondPlayer, currentPlayer).addMoves(m);
+			m = new Position(line, row, Player.getPlayer(firstPlayer, secondPlayer, currentPlayer).getCard());
+			board.addPosition(m);
+			Player.getPlayer(firstPlayer, secondPlayer, currentPlayer).addPositions(m);
 			currentPlayer++;
 			board.printBoard();
 			System.out.println();
@@ -83,10 +83,10 @@ public class Practice03 {
 		}
 
 		sc.close();
-		System.out.println("Print moves of " + firstPlayer);
-		firstPlayer.printMoves();
-		System.out.println("Print moves of " + secondPlayer);
-		secondPlayer.printMoves();
+		System.out.println("Print Positions of " + firstPlayer);
+		firstPlayer.printPositions();
+		System.out.println("Print Positions of " + secondPlayer);
+		secondPlayer.printPositions();
 
 		// result
 		board.printResult(result, Player.getPlayer(firstPlayer, secondPlayer, currentPlayer));

@@ -1,16 +1,16 @@
 
-public class Move {	
+public class Position {	
 	private Integer line;
 	private Integer row;
 	private String piece;
 	
 	
-	public Move() {
+	public Position() {
 		
 	}
 	
 	
-	public Move(Integer line, Integer row, String piece) {
+	public Position(Integer line, Integer row, String piece) {
 		this.line = line;
 		this.row = row;
 		this.piece=piece;

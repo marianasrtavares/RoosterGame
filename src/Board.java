@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Board {
 	private String[][] board;
-	private List<Move> moves = new ArrayList<>();
+	private List<Position> Positions = new ArrayList<>();
 
 	public Board() {
 
@@ -21,13 +21,13 @@ public class Board {
 		this.board = board;
 	}
 
-	public void addMove(Move move) {
-		moves.add(move);
-		board[move.getLine()][move.getRow()] = move.getCard();
+	public void addPosition(Position Position) {
+		Positions.add(Position);
+		board[Position.getLine()][Position.getRow()] = Position.getCard();
 	}
 
-	public List<Move> getMoves() {
-		return moves;
+	public List<Position> getPositions() {
+		return Positions;
 	}
 
 	public boolean isPossibleSolution(boolean[] possibleSolution) {
@@ -152,8 +152,8 @@ public class Board {
 	}
 
 	public boolean pieceExiste(int line, int row) {
-		for (Move move : moves) {
-			if (move.getLine() == line && move.getRow() == row && move.getCard() != null)
+		for (Position Position : Positions) {
+			if (Position.getLine() == line && Position.getRow() == row && Position.getCard() != null)
 				return true;
 		}
 		return false;
